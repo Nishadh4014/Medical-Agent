@@ -8,7 +8,7 @@ from spire.doc import *
 from spire.doc.common import *
 from datetime import date
 
-def generate_refined_report(patient_name,patient_age,patient_gender,referred_by,test_done_by,raw_findings, report_type, openai_client):
+def generate_refined_report(patient_name,patient_age,patient_gender,current_date,referred_by,test_done_by,raw_findings, report_type, openai_client):
     """Generate a refined report using the appropriate GPT model."""
     model = 'gpt-4o' if report_type == 'Complex' else 'gpt-3.5-turbo'
     prompt = (
@@ -19,7 +19,7 @@ def generate_refined_report(patient_name,patient_age,patient_gender,referred_by,
         "Raw Report Input:\n"  
         f"Patient name:\n{patient_name}\n\n"
         f"Patient age:\n{patient_age}\n\n"
-        f"date:\n{date}\n\n"
+        f"date:\n{current_date}\n\n"
         f"Patient gender:\n{patient_gender}\n\n"
         f"Referred by:\n{referred_by}\n\n"
         f"Raw Findings:\n{raw_findings}\n\n"
