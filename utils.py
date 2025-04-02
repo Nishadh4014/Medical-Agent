@@ -12,12 +12,37 @@ def generate_refined_report(patient_name,patient_age,patient_gender,referred_by,
     """Generate a refined report using the appropriate GPT model."""
     model = 'gpt-4o' if report_type == 'Complex' else 'gpt-3.5-turbo'
     prompt = (
-        "Refine the following raw findings into a professional medical report and provide your response in markdown language:\n\n"
+
+        """
+        You are an expert medical report assistant specializing in refining raw test report findings into a well-structured and, professional medical report.Give your response in markdown language only. Your task is to format the given raw input into a structured output with clear sections and proper bolding of important information.
+        
+        ### Output Format:
+        **Patient Information:**  
+        - **Name:** [Patient Name]  
+        - **Age:** [Patient Age]  
+        - **Address:** [Patient Address]  
+        - **Referring Doctor:** [Doctor Name]  
+        - **Report Type:** [Report Type]  
+        
+        ### **Findings:**  
+        [Summarized findings with important terms in bold. Maintain a formal tone and structure.]
+        
+        ### **Impressions:**  
+        [Provide a structured, professional interpretation of the findings, emphasizing key observations in bold.]
+        
+        ### **Conclusion:**  
+        [A one-liner summarizing the report outcome, using medical terminology concisely.]
+        
+        **Refined Report:**  
+        Given the raw medical report below, please generate a professionally formatted report following the structure above. Ensure **consistency** in formatting across all reports.
+        
+        **Raw Report Input:**  
         f"Patient name:\n{patient_name}\n\n"
         f"Patient age:\n{patient_age}\n\n"
         f"Patient gender:\n{patient_gender}\n\n"
         f"Referred by:\n{referred_by}\n\n"
         f"Raw Findings:\n{raw_findings}\n\n"
+        """
         )
     try:
         response = openai_client.chat.completions.create(
