@@ -14,7 +14,7 @@ def generate_refined_report(patient_name,patient_age,patient_gender,current_date
     prompt = (
 
         """
-        You are an expert medical report assistant specializing in refining raw test report findings into a well-structured and, professional medical report.Give your response in markdown language. The refined report should contain patient information,findings,impressions, keep these bullet/sub bullet if needed, wise and user readable and just try to bold positive findings specifically.
+        You are an expert medical report assistant specializing in refining raw test report findings into a well-structured and, professional medical report.Give your response in markdown language. The refined report should contain patient information,findings,impressions, keep these sections in proper user readble format rather than paragraphs and just try to bold positive findings specifically.
         """
         "Raw Report Input:\n"  
         f"Patient name:\n{patient_name}\n\n"
