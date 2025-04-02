@@ -14,22 +14,12 @@ def generate_refined_report(patient_name,patient_age,patient_gender,referred_by,
     prompt = (
 
         """
-        You are an expert medical report assistant specializing in refining raw test report findings into a well-structured and, professional medical report.Give your response in markdown language. Your task is to format the given raw input into a structured output with clear sections and proper bolding of important information.
-        Output format:
-        Patient information:
-            name
-            age
-            reffered by
-            date
-            report done by doctor
-        report type (analyze the type of the report)
-        findings (try to bold the positive and informative findings and keep it in proper list format)
-        impressions
-        conclusion (keep it short)
+        You are an expert medical report assistant specializing in refining raw test report findings into a well-structured and, professional medical report.Give your response in markdown language. The refined report should contain patient information,findings,impressions and a short conclusion.
         """
         "Raw Report Input:\n"  
         f"Patient name:\n{patient_name}\n\n"
         f"Patient age:\n{patient_age}\n\n"
+        f"date:\n{date}\n\n"
         f"Patient gender:\n{patient_gender}\n\n"
         f"Referred by:\n{referred_by}\n\n"
         f"Raw Findings:\n{raw_findings}\n\n"
