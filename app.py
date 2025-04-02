@@ -88,7 +88,7 @@ elif page == "Refine Report":
         if complex_submit and raw_findings:
             report_type = "Complex"
             with st.spinner("Refining complex report..."):
-                refined_report = generate_refined_report(patient_name,patient_age,patient_gender,referred_by,test_done_by,raw_findings, report_type, openai_client)
+                refined_report = generate_refined_report(patient_name,patient_age,patient_gender,current_date,referred_by,test_done_by,raw_findings, report_type, openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))
@@ -100,7 +100,7 @@ elif page == "Refine Report":
         elif non_complex_submit and raw_findings:
             report_type = "Non-Complex"
             with st.spinner("Refining non-complex report..."):
-                refined_report = generate_refined_report(patient_name,patient_age,patient_gender,referred_by,test_done_by,raw_findings, report_type, openai_client)
+                refined_report = generate_refined_report(patient_name,patient_age,patient_gender,current_date,referred_by,test_done_by,raw_findings, report_type, openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     # c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))
