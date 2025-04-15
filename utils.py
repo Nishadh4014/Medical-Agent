@@ -8,21 +8,21 @@ from spire.doc import *
 from spire.doc.common import *
 from datetime import date
 
-def generate_refined_report(patient_name,patient_age,patient_gender,referred_by,test_done_by,raw_findings, report_type, openai_client):
+def generate_refined_report(raw_findings, openai_client):
     """Generate a refined report using the appropriate GPT model."""
-    model = 'gpt-4o' if report_type == 'Complex' else 'gpt-3.5-turbo'
+
+    
+    model = 'gpt-4o'
     prompt = (
-        "Refine the following raw findings into a professional medical report and provide your response in markdown language:\n\n"
-        f"Patient name:\n{patient_name}\n\n"
-        f"Patient age:\n{patient_age}\n\n"
-        f"Patient gender:\n{patient_gender}\n\n"
-        f"Referred by:\n{referred_by}\n\n"
-        f"Raw Findings:\n{raw_findings}\n\n"
+        "Refine the following medical report:\n\n"
+        f"Raw report: {raw_findings}\n\n"
+        """give your output in markdown format."""
         )
     try:
         response = openai_client.chat.completions.create(
             model=model,
-            messages=[{"role": "user", "content": prompt}]
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.9
         )
         print(f"Response: {response}")  # Debugging line to check the response
         res=response.choices[0].message.content

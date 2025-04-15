@@ -1,63 +1,40 @@
+```markdown
 # Medical Report
 
-**Patient Information:**
+**Patient Name:** Arpit P Bhagat  
+**Age:** 36 years, Male  
+**Referred by Dr.:** Nikhil Patel  
+**Study Date:** 3 February 2025  
 
-- **Name:** Nishadh Shah
-- **Age:** 52
-- **Gender:** Male
-- **Referred by:** [Referring entity: kbcbcin]
+## 3.0 T MRI Perineum with Fistulogram (P+C)
 
----
+### Protocol
+- TSE T2W SAG 4.0 mm
+- TSE T2W COR 3.0 mm
+- TSE T1W AXIAL 3.0 mm
+- TSE T2W AXIAL 3.0 mm
+- STIR COR 4.0 mm
+- FS 3D T1W POST CONTRAST 1.0 mm
 
-## Ultrasonography of the Abdomen
+**Images Quality:** Good  
 
-### Appendix
-- Located at the Right Iliac Fossa (R.I.F.).
-- Thickness: 5.6 mm at the base and 5.9 mm at the tip, considered borderline.
-- Appendicular lumen is not distended.
-- Probe tenderness is noted in the R.I.F.
-- Length of the appendix is approximately 7.0 cm.
-- No significant mesenteric thickening observed in R.I.F.
-- Presence of a few lymph nodes in the mesentery in R.I.F.
+### Clinical Information
+- Perianal fistula
 
-### Liver
-- Normal in size and echotexture.
-- No evidence of focal or diffuse lesions.
-- No dilatation of intrahepatic bile ducts (I.H.B.R.).
+### Findings
+- **Openings:** Two external openings noted in the right gluteal region.
+- **Tracts:**
+  - Both external openings continue superiorly as thin tracts and converge in the right perianal region, approximately 1.5 – 1.8 cm distal to the skin opening.
+  - A single tract extends superiorly in the right perianal region, opening into the anal canal at the 6 o'clock position, 2.7 cm proximal to the anal verge.
+  - Another branch of the tract opens into the anal canal just proximal to the anal verge at the 6 o'clock position, traversing the external sphincter at the 8 o'clock position.
+  - A blind-ending tract is observed extending posteriorly in the right gluteal region.
+  - A branch of the tract extends to the right perineum with a suspicious opening.
 
-### Gall Bladder
-- Physiologically well-distended and appears normal.
-- No gallstones detected.
-- Common bile duct (C.B.D.) is normal in size.
-
-### Pancreas
-- Morphologically normal.
-- No mass lesions or calcifications observed.
-
-### Spleen
-- Normal in size and echotexture.
-- No evidence of any focal lesions.
-- Splenic vein is normal in size.
-
-### Kidneys
-- Both kidneys are normal in size, shape, and position.
-- Cortico-medullary differentiation is well preserved.
-- No evidence of stones or hydronephrosis.
-
-### Urinary Bladder
-- Physiologically well-distended.
-- Normal wall thickness.
-- No evidence of calculus, mass lesion, or diverticulum.
-
-### Additional Findings
-- No free fluid evident in the abdomen and pelvis.
-
----
-
-## Impression
-
-- **Appendix:** Exhibits borderline thickening. Consideration for subacute appendicitis is advised, subject to clinical correlation.
-
----
-
-**Note:** This report should be interpreted in conjunction with clinical findings and other diagnostic processes for comprehensive clinical management.
+### Additional Observations
+- **Tract Type:** Complex transphincteric
+- **Tract Activity:** Active, shows enhancement on post-contrast study.
+- **Inter-tract Communication:** Present
+- **Supralevator Component:** Absent
+- **Abscess Formation and Location:** Absent
+- **Evidence of Prior Sphincter Injury:** No
+```
