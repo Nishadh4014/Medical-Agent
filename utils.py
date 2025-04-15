@@ -17,6 +17,7 @@ def generate_refined_report(raw_findings, openai_client):
         "Refine the following medical report:\n\n"
         f"Raw report: {raw_findings}\n\n"
         """give your output in markdown format."""
+        "keep the tab spacing between the headings and its content and the subheadings and its content.\n\n"
         )
     try:
         response = openai_client.chat.completions.create(
