@@ -8,22 +8,36 @@ from spire.doc import *
 from spire.doc.common import *
 from datetime import date
 
-def generate_refined_report(raw_findings, openai_client):
+def generate_refined_report(raw_findings,selected, openai_client):
     """Generate a refined report using the appropriate GPT model."""
 
     
     model = 'gpt-4o'
     prompt = (
-        "Refine the following medical report:\n\n"
+        f"Act as a professional {selected} and Refine the following medical report:\n\n"
         f"Raw report: {raw_findings}\n\n"
         """give your output in markdown format."""
-        "keep the tab spacing between the headings and its content and the subheadings and its content.\n\n"
+        "also provide the output in following format,\n\n"
+        """
+        patient information,
+        Investigation method,
+        Technique,
+        clinical profile,
+        findings,
+        impression,
+        conclusion
+        
+        If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
+        Also highlight the positive findings in the report with **bold**"""
+        "and just dont write the exact content from raw findings, try to add something in it which can help doctors to take decisions logically but while doing this dont mess things up, try to keep it clear and user readable"
+        "keep the tab spacing between headings and its content, between subheadings and it content and between headings and subheadings"
+        "keep the font family verdana"
         )
     try:
         response = openai_client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.9
+            temperature=0.5 
         )
         print(f"Response: {response}")  # Debugging line to check the response
         res=response.choices[0].message.content

@@ -1,40 +1,51 @@
 ```markdown
-# Medical Report
+<style>
+    body {
+        font-family: Verdana, sans-serif;
+    }
+</style>
 
-**Patient Name:** Arpit P Bhagat  
-**Age:** 36 years, Male  
-**Referred by Dr.:** Nikhil Patel  
-**Study Date:** 3 February 2025  
+# Radiology Report
 
-## 3.0 T MRI Perineum with Fistulogram (P+C)
+## Patient Information
 
-### Protocol
-- TSE T2W SAG 4.0 mm
-- TSE T2W COR 3.0 mm
-- TSE T1W AXIAL 3.0 mm
-- TSE T2W AXIAL 3.0 mm
-- STIR COR 4.0 mm
-- FS 3D T1W POST CONTRAST 1.0 mm
+    Name: Dr. Girish Jethwa  
+    Age: 58 Years  
+    Gender: Male  
+    Referred by: Self  
+    Date of Examination: 16 April 2025  
 
-**Images Quality:** Good  
+## Investigation Method
 
-### Clinical Information
-- Perianal fistula
+    1.5 T MRI of the Left Shoulder  
 
-### Findings
-- **Openings:** Two external openings noted in the right gluteal region.
-- **Tracts:**
-  - Both external openings continue superiorly as thin tracts and converge in the right perianal region, approximately 1.5 – 1.8 cm distal to the skin opening.
-  - A single tract extends superiorly in the right perianal region, opening into the anal canal at the 6 o'clock position, 2.7 cm proximal to the anal verge.
-  - Another branch of the tract opens into the anal canal just proximal to the anal verge at the 6 o'clock position, traversing the external sphincter at the 8 o'clock position.
-  - A blind-ending tract is observed extending posteriorly in the right gluteal region.
-  - A branch of the tract extends to the right perineum with a suspicious opening.
+## Technique
 
-### Additional Observations
-- **Tract Type:** Complex transphincteric
-- **Tract Activity:** Active, shows enhancement on post-contrast study.
-- **Inter-tract Communication:** Present
-- **Supralevator Component:** Absent
-- **Abscess Formation and Location:** Absent
-- **Evidence of Prior Sphincter Injury:** No
+    Imaging Sequences:  
+        - SE T1W Sagittal and Coronal  
+        - FSE T2W Coronal & Axials  
+        - T2GE Axials  
+        - T2 Fat Suppression Sagittal  
+
+## Findings
+
+    - **Thickened and indistinct inferior joint capsule** with associated fluid collection and distension of the axillary pouch. The joint capsule measures between 3.0 to 3.5 mm in thickness, which is indicative of capsular pathology.
+    
+    - **Minimal fluid presence** in the gleno-humeral joint and along the bicipital tendon sheath, suggesting mild inflammation or irritation.
+    
+    - **Subchondral cyst/geode** at the superior aspect of the humeral head, potentially indicative of early degenerative changes or stress-related bone response.
+    
+    - **Intrasubstance hyperintensity** in the antero-superior labrum, raising the possibility of degenerative changes which may correlate with clinical symptoms.
+    
+    - **Minimal fluid noted** in the subacromial bursa, indicating mild bursitis without any significant impingement.
+    
+    - The acromial contour is normal, with **no evidence of impingement**. The muscles around the shoulder and their attachments appear normal, ruling out any muscular pathology.
+
+## Impression
+
+    The imaging findings are consistent with **adhesive capsulitis**, characterized by the thickening of the joint capsule and fluid accumulation. The presence of a subchondral cyst at the humeral head and degenerative changes in the labrum suggest concurrent degenerative joint disease processes.
+
+## Conclusion
+
+    The MRI findings suggest adhesive capsulitis of the left shoulder with associated mild degenerative changes. The subchondral cyst at the humeral head and labral degeneration should be correlated with clinical findings for comprehensive management. Consideration of therapeutic interventions targeting capsular distension and potential degenerative changes may be beneficial.
 ```

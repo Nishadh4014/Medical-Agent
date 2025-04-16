@@ -19,7 +19,7 @@ openai_client = OpenAI(api_key=openai_api_key)
 
 # # Database setup (create table if not exists)
 # with sqlite3.connect('reports.db') as conn:
-#     c = conn.cursor()
+#     c = conn.cursor() 
 #     c.execute('''
 #         CREATE TABLE IF NOT EXISTS reports (
 #             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -55,8 +55,25 @@ if page == "Dashboard":
 elif page == "Refine Report":
     st.title("Refine Medical Report")
     
+    radiology_options = {
+        "op:1":"General Radiologist",
+        "op:2":"Neuroradiologist",
+        "op:3":"Musculoskeletal (MSK) Radiologist",
+        "op:4":"Abdominal Radiologist",
+        "op:5":"Chest Radiologist",
+        "op:6":"Breast Radiologist",
+        "op:7":"Cardiac Radiologist",
+        "op:8":"Pediatric Radiologist",
+        "op:9":"Emergency & Trauma Radiologist",
+        "op:10":"Head & Neck Radiologist",
+        "op:11":"Vascular/Interventional Radiologist",
+        "op:12":"Fetal/Obstetric Radiologist"
+    }
+
+    selected = st.selectbox("Select a Radiology Specialty", list(radiology_options.values()))
+
+
     with st.form("refine_form"):
-        
         
         st.write("### Enter your raw findings here...")
         raw_findings = st.text_area(
@@ -74,7 +91,7 @@ elif page == "Refine Report":
         if complex_submit and raw_findings:
             report_type = "Complex"
             with st.spinner("Refining complex report..."):
-                refined_report = generate_refined_report(raw_findings, openai_client)
+                refined_report = generate_refined_report(raw_findings,selected,openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))
@@ -86,7 +103,7 @@ elif page == "Refine Report":
         elif non_complex_submit and raw_findings:
             report_type = "Non-Complex"
             with st.spinner("Refining non-complex report..."):
-                refined_report = generate_refined_report(raw_findings, openai_client)
+                refined_report = generate_refined_report(raw_findings,selected, openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     # c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))
