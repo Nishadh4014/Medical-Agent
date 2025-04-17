@@ -72,7 +72,12 @@ elif page == "Refine Report":
 
     selected = st.selectbox("Select a Radiology Specialty", list(radiology_options.values()))
 
-
+    st.write("### Enter any comments you have about the report(optional)")
+    comments = st.text_area(
+        label="Comments",
+        height=100,  # height in pixels
+    )
+ 
     with st.form("refine_form"):
         
         st.write("### Enter your raw findings here...")
@@ -91,7 +96,7 @@ elif page == "Refine Report":
         if complex_submit and raw_findings:
             report_type = "Complex"
             with st.spinner("Refining complex report..."):
-                refined_report = generate_refined_report(raw_findings,selected,openai_client)
+                refined_report = generate_refined_report(raw_findings,selected,comments,openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))
@@ -103,7 +108,7 @@ elif page == "Refine Report":
         elif non_complex_submit and raw_findings:
             report_type = "Non-Complex"
             with st.spinner("Refining non-complex report..."):
-                refined_report = generate_refined_report(raw_findings,selected, openai_client)
+                refined_report = generate_refined_report(raw_findings,selected,comments, openai_client)
                 # with sqlite3.connect('reports.db') as conn:
                 #     c = conn.cursor()
                 #     # c.execute("INSERT INTO reports (report_type) VALUES (?)", (report_type,))

@@ -1,51 +1,65 @@
 ```markdown
 <style>
     body {
-        font-family: Verdana, sans-serif;
+        font-family: Arial, sans-serif;
     }
 </style>
 
-# Radiology Report
+# Patient Information
 
-## Patient Information
+- **Name:** [Patient's Name]
+- **Age:** [Patient's Age]
+- **Gender:** [Patient's Gender]
+- **ID:** [Patient's ID]
 
-    Name: Dr. Girish Jethwa  
-    Age: 58 Years  
-    Gender: Male  
-    Referred by: Self  
-    Date of Examination: 16 April 2025  
+# Investigation Method
 
-## Investigation Method
+- **Examination:** Ultrasound of the Abdomen
 
-    1.5 T MRI of the Left Shoulder  
+# Technique
 
-## Technique
+- **Approach:** Standard abdominal ultrasound technique was utilized to evaluate the abdominal organs and structures.
 
-    Imaging Sequences:  
-        - SE T1W Sagittal and Coronal  
-        - FSE T2W Coronal & Axials  
-        - T2GE Axials  
-        - T2 Fat Suppression Sagittal  
+# Findings
 
-## Findings
+- **Peritoneal Cavity:** 
+  - **Moderate amount of free fluid noted** with **multiple internal echoes and septations**, suggesting an **infective nature** of the fluid. This finding raises concern for potential infectious or inflammatory processes within the abdominal cavity.
+  
+- **Bowel:**
+  - No evidence of dilatation of small bowel loops observed, indicating no immediate signs of bowel obstruction.
 
-    - **Thickened and indistinct inferior joint capsule** with associated fluid collection and distension of the axillary pouch. The joint capsule measures between 3.0 to 3.5 mm in thickness, which is indicative of capsular pathology.
-    
-    - **Minimal fluid presence** in the gleno-humeral joint and along the bicipital tendon sheath, suggesting mild inflammation or irritation.
-    
-    - **Subchondral cyst/geode** at the superior aspect of the humeral head, potentially indicative of early degenerative changes or stress-related bone response.
-    
-    - **Intrasubstance hyperintensity** in the antero-superior labrum, raising the possibility of degenerative changes which may correlate with clinical symptoms.
-    
-    - **Minimal fluid noted** in the subacromial bursa, indicating mild bursitis without any significant impingement.
-    
-    - The acromial contour is normal, with **no evidence of impingement**. The muscles around the shoulder and their attachments appear normal, ruling out any muscular pathology.
+- **Mesenteric Lymph Nodes:**
+  - **Multiple enlarged mesenteric lymph nodes** are noted, which could be indicative of an underlying inflammatory or infectious process.
 
-## Impression
+- **Liver:**
+  - Normal in size and echotexture. No focal or diffuse lesions identified. Intrahepatic biliary radicals are not dilated, suggesting normal liver function.
 
-    The imaging findings are consistent with **adhesive capsulitis**, characterized by the thickening of the joint capsule and fluid accumulation. The presence of a subchondral cyst at the humeral head and degenerative changes in the labrum suggest concurrent degenerative joint disease processes.
+- **Gallbladder:**
+  - Physiologically well-distended with normal wall thickness. No gallstones detected, ruling out cholelithiasis.
 
-## Conclusion
+- **Pancreas:**
+  - Normal morphology with no mass lesions or calcifications. Main pancreatic duct is not dilated, indicating no signs of pancreatic pathology.
 
-    The MRI findings suggest adhesive capsulitis of the left shoulder with associated mild degenerative changes. The subchondral cyst at the humeral head and labral degeneration should be correlated with clinical findings for comprehensive management. Consideration of therapeutic interventions targeting capsular distension and potential degenerative changes may be beneficial.
+- **Spleen:**
+  - Normal in size and echotexture with no focal lesions. The splenic vein is of normal size, suggesting normal splenic function.
+
+- **Kidneys:**
+  - Both kidneys are normal in size, shape, and position. Cortico-medullary differentiation is well preserved. No stones or hydronephrosis noted, indicating normal renal function.
+
+- **Para-aortic Lymph Nodes:**
+  - No para-aortic lymphadenopathy seen, which is reassuring against retroperitoneal pathology.
+
+- **Urinary Bladder:**
+  - Physiologically well-distended with normal wall thickness. No evidence of calculus, mass lesion, or diverticulum.
+
+# Impression
+
+- The presence of **moderate free fluid with internal echoes and septations** in the peritoneal cavity and **enlarged mesenteric lymph nodes** suggests consideration of the following possibilities:
+  1. **Tuberculous Peritonitis (Koch’s),** if the condition is chronic.
+  2. **Sealed Gastrointestinal Perforation,** which should be investigated further.
+  3. **Perforated Appendicitis,** if the clinical presentation is acute.
+
+# Conclusion
+
+- The ultrasound findings indicate an **infective or inflammatory process** within the abdominal cavity. Correlation with clinical findings and further diagnostic workup, such as laboratory tests or CT imaging, may be necessary to confirm the diagnosis and guide treatment. Regular follow-up and monitoring of the patient's condition are recommended to assess the progression or resolution of the identified abnormalities.
 ```
