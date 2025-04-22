@@ -31,8 +31,8 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
-            "and just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions logically but while doing this dont mess things up, try to keep it clear and user readable"
-            "keep the tab spacing before the subheadings or content with the bullet points and it should strictly in user readable format."
+            "and just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
+            "keep the tab spacing before the subheadings below the heading and tab spacing before the content below the heading or subheading with the bullet points and it should strictly in user readable format."
             f"Look at this comment as well which doctor has provided: {comments} and consider it as reference."
             "keep the font family Arial"
             )
