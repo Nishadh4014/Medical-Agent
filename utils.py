@@ -16,7 +16,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     prompt=()
     if comments:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report and add logical analysis which helps doctors to identify the causes:\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis which helps doctors to identify the causes:\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -32,11 +32,30 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
             f"Doctor has some preference for his report : {comments}"
+            """
+            You must format the findings and impression output exactly like this:
+            
+            - Heading
+            \t- Subheading
+            \t\t- Content
+            
+            OR
+            
+            - Heading
+            \t- Content
+
+            Rules:
+            - Use EXACTLY one dash and one space ("- ") for bullets.
+            - Use EXACTLY one tab character ("\t") for each indentation level.
+            - If subheadings exist, nest content below them.
+            - If no subheading, put content directly after one tab.
+            - Do not add blank lines between bullets or headings.
+            """
             )
     else:
         prompt = (
             
-            f"Act as a professional {selected} and Refine the following medical report and add logical analysis which helps doctors to identify the causes:\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis which helps doctors to identify the causes:\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -51,6 +70,25 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
+            """
+            You must format the findings and impression output exactly like this:
+            
+            - Heading
+            \t- Subheading
+            \t\t- Content
+            
+            OR
+            
+            - Heading
+            \t- Content
+
+            Rules:
+            - Use EXACTLY one dash and one space ("- ") for bullets.
+            - Use EXACTLY one tab character ("\t") for each indentation level.
+            - If subheadings exist, nest content below them.
+            - If no subheading, put content directly after one tab.
+            - Do not add blank lines between bullets or headings.
+            """
         ) 
     try:
         response = openai_client.chat.completions.create(
