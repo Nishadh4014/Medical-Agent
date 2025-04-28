@@ -32,7 +32,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
             "The main point is just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
-            "maintain a proper format and spacing in the report, and follow the below list format strictly if needed"
+            "follow the below list format strictly in findings, impression and conclusion sections"
             """Heading
                (tab space)(bullet point)subheading
                (tab space)(tab space)(bullet point)content
@@ -63,8 +63,8 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
-           "The main point is just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
-            "maintain a proper format and spacing in the report, and follow the below list format strictly if needed"
+            "The main point is just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
+            "follow the below list format strictly in findings, impression and conclusion sections"
             """Heading
                (tab space)(bullet point)subheading
                (tab space)(tab space)(bullet point)content
@@ -73,10 +73,9 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
 
                 Heading
                 (tab space)(bullet point)content
-                    """
+            """
             "Use tables if needed(no necessary but if needed then use it)"
             "keep the font family Arial"
-            
         ) 
     try:
         response = openai_client.chat.completions.create(
