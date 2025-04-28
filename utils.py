@@ -16,7 +16,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     prompt=()
     if comments:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report:\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and add logical analysis which helps doctors to identify the causes:\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -28,27 +28,15 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             findings,
             impression,
             conclusion
-            
+
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
-            "The main point is just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
-            "follow the below list format strictly in findings, impression and conclusion sections"
-            """Heading
-               (tab space)(bullet point)subheading
-               (tab space)(tab space)(bullet point)content
-                    
-                    OR
-
-                Heading
-                (tab space)(bullet point)content
-                    """
-            "Use tables if needed(no necessary but if needed then use it)"
-            f"Look at this comment as well which doctor has provided: {comments} and consider it as reference."
-            "keep the font family Arial"
+            f"Doctor has some preference for his report : {comments}"
             )
     else:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report:\n\n"
+            
+            f"Act as a professional {selected} and Refine the following medical report and add logical analysis which helps doctors to identify the causes:\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -63,19 +51,6 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
-            "The main point is just dont write the exact content from raw findings, try to add some analysis within it which can help doctors to take decisions(and predict the actual cause) logically but while doing this dont mess things up, try to keep it clear and user readable"
-            "follow the below list format strictly in findings, impression and conclusion sections"
-            """Heading
-               (tab space)(bullet point)subheading
-               (tab space)(tab space)(bullet point)content
-                    
-                    OR
-
-                Heading
-                (tab space)(bullet point)content
-            """
-            "Use tables if needed(no necessary but if needed then use it)"
-            "keep the font family Arial"
         ) 
     try:
         response = openai_client.chat.completions.create(
