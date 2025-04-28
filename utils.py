@@ -26,8 +26,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             Technique,
             clinical profile,
             findings,
-            impression,
-            conclusion
+            impression
 
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
@@ -65,8 +64,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             Technique,
             clinical profile,
             findings,
-            impression,
-            conclusion
+            impression
             
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
             Also highlight the positive findings in the report with **bold**"""
