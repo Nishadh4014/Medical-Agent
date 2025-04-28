@@ -56,7 +56,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
         response = openai_client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.5 
+            temperature=0.8
         )
         print(f"Response: {response}")  # Debugging line to check the response
         res=response.choices[0].message.content
