@@ -16,7 +16,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     prompt=()
     if comments:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis which helps doctors to identify the causes:\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis and possibilities which helps doctors to identify the causes(dont add as a explicit section but must add within the sections without mentioning the 'analysis' title):\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -55,7 +55,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     else:
         prompt = (
             
-            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis which helps doctors to identify the causes:\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis and possibilities which helps doctors to identify the causes(dont add as a explicit section but must add within the sections without mentioning the 'analysis' title):\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
