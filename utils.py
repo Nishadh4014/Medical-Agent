@@ -16,7 +16,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     prompt=()
     if comments:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis and possibilities which helps doctors to identify the causes(dont add as a explicit section but must add within the sections without mentioning the 'analysis' title):\n\n"
+            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis and possibilities which helps doctors to identify the causes(dont add as a explicit section but must add within the findings sections without mentioning the 'analysis' title):\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -29,24 +29,24 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             impression
 
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
-            Try to add additional impression based on your analysis rather than the given impressions.
+            Try to add additional impression based on your analysis(not in casual language but try to give it in professional medical terminology with proofs) rather than the given impressions.
             Also highlight the positive findings in the report with **bold**"""
             f"Doctor has some preference for his report : {comments}, analize it and add an explicit section according to his preference."
             """
             You must format the findings and impression output exactly like this:
             
             - Heading
-            \s\s- Subheading
-            \s\s\s\s- Content
+            \t- Subheading
+            \t\t- Content
             
             OR
             
             - Heading
-            \s\s- Content
+            \t- Content
 
             Rules:
             - Use EXACTLY one dash and one space ("- ") for bullets.
-            - Use EXACTLY two whitespace ("\s") for each indentation level.
+            - Use EXACTLY one tab ("\t") for each indentation level.
             - If subheadings exist, nest content below them.
             - If no subheading, put content directly after one tab.
             - Do not add blank lines between bullets or headings.
@@ -72,17 +72,17 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             Also highlight the positive findings in the report with **bold**"""
             """
             - Heading
-            \s\s- Subheading
-            \s\s\s\s- Content
+            \t- Subheading
+            \t\t- Content
             
             OR
             
             - Heading
-            \s\s- Content
+            \t- Content
 
             Rules:
             - Use EXACTLY one dash and one space ("- ") for bullets.
-            - Use EXACTLY two whitespace ("\s") for each indentation level.
+            - Use one tab whitespace ("\s") for each indentation level.
             - If subheadings exist, nest content below them.
             - If no subheading, put content directly after one tab.
             - Do not add blank lines between bullets or headings.
