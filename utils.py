@@ -36,17 +36,17 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             You must format the findings and impression output exactly like this:
             
             - Heading
-            \t- Subheading
-            \t\t- Content
+            \s\s- Subheading
+            \s\s\s\s- Content
             
             OR
             
             - Heading
-            \t- Content
+            \s\s- Content
 
             Rules:
             - Use EXACTLY one dash and one space ("- ") for bullets.
-            - Use EXACTLY one tab character ("\t") for each indentation level.
+            - Use EXACTLY two whitespace ("\s") for each indentation level.
             - If subheadings exist, nest content below them.
             - If no subheading, put content directly after one tab.
             - Do not add blank lines between bullets or headings.
@@ -71,20 +71,18 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             Try to add additional impression based on your analysis rather than the given impressions.
             Also highlight the positive findings in the report with **bold**"""
             """
-            You must format the findings and impression output exactly like this:
-            
             - Heading
-            \t- Subheading
-            \t\t- Content
+            \s\s- Subheading
+            \s\s\s\s- Content
             
             OR
             
             - Heading
-            \t- Content
+            \s\s- Content
 
             Rules:
             - Use EXACTLY one dash and one space ("- ") for bullets.
-            - Use EXACTLY one tab character ("\t") for each indentation level.
+            - Use EXACTLY two whitespace ("\s") for each indentation level.
             - If subheadings exist, nest content below them.
             - If no subheading, put content directly after one tab.
             - Do not add blank lines between bullets or headings.
