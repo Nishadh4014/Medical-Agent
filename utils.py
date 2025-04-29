@@ -16,7 +16,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     prompt=()
     if comments:
         prompt = (
-            f"Act as a professional {selected} and Refine the following medical report and must add logical analysis and possibilities which helps doctors to identify the causes(dont add as a explicit section but must add within the findings sections without mentioning the 'analysis' title):\n\n"
+            f"Act as a professional {selected} and Refine the following medical report.\n\n"
             f"Raw report: {raw_findings}\n\n"
             """give your output in strict markdown format."""
             "also provide the output in following format,\n\n"
@@ -29,8 +29,15 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             impression
 
             If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
-            Try to add additional impression based on your analysis(not in casual language but try to give it in professional medical terminology with proofs) rather than the given impressions.
+            
+            Enhance the given raw medical findings by integrating logical diagnostic reasoning. You must:
+            1. **Embed clinically relevant analysis seamlessly** within the findings section — do not create a separate 'Analysis' section or use casual phrases like "this might mean".
+            2. Use **professional medical terminology** to infer additional possibilities, correlations, or implications based on the findings.
+            3. Highlight possible causes, differential diagnoses, or suggestive patterns that may aid in disease identification — even if not explicitly mentioned.
+            4. Maintain a factual, evidence-based tone — reference imaging signs, lab patterns, anatomical context, or pathophysiology where possible.
+            5. Provide an enhanced "Impression" section derived not only from the given findings but also from your integrated medical reasoning.
             Also highlight the positive findings in the report with **bold**"""
+            
             f"Doctor has some preference for his report : {comments}, analize it and add an explicit section according to his preference."
             """
             You must format the findings and impression output exactly like this:
