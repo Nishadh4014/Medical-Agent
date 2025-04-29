@@ -67,7 +67,8 @@ elif page == "Refine Report":
         "op:9":"Emergency & Trauma Radiologist",
         "op:10":"Head & Neck Radiologist",
         "op:11":"Vascular/Interventional Radiologist",
-        "op:12":"Fetal/Obstetric Radiologist"
+        "op:12":"Fetal/Obstetric Radiologist",
+        "op:13":"Onco Radiologist"
     }
 
     selected = st.selectbox("Select a Radiology Specialty", list(radiology_options.values()))
