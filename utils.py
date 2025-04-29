@@ -42,7 +42,8 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             - Use alternative descriptors where appropriate.
             - Combine related findings when they involve the same region.
             - Assume implicit context to avoid stating the same location repeatedly unless clinically essential.
-            
+            Also highlight the positive findings in the report with **bold**
+            """
             f"Doctor has some preference for his report : {comments}, analize it and add an explicit section according to his preference."
             """
             You must format the findings and impression output exactly like this:
