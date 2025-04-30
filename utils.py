@@ -18,9 +18,10 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
         prompt = (
             f"Act as a professional {selected} and Refine the following medical report.\n\n"
             f"Raw report: {raw_findings}\n\n"
-            """give your output in strict markdown format."""
-            "also provide the output in following format,\n\n"
+            "give your output in strict markdown format."
             """
+            also provide the output in following format,\n\n
+        
             patient information,
             Investigation method,
             Technique,
@@ -36,7 +37,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             3. Highlight possible causes, differential diagnoses, or suggestive patterns that may aid in disease identification — even if not explicitly mentioned.
             4. Maintain a factual, evidence-based tone — reference imaging signs, lab patterns, anatomical context, or pathophysiology where possible.
             5. Provide an enhanced "Impression" section derived not only from the given findings but also from your integrated medical reasoning.
-            Also highlight the positive findings in the report with **bold**"""
+            Also highlight the positive findings in the report with **bold**
 
             When describing anatomical locations, avoid repeating the same phrase (e.g., "medial aspect") multiple times in close succession. Instead:
             - Use alternative descriptors where appropriate.
@@ -44,6 +45,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             - Assume implicit context to avoid stating the same location repeatedly unless clinically essential.
             Also highlight the positive findings in the report with **bold**
             """
+
             f"Doctor has some preference for his report : {comments}, analize it and add an explicit section according to his preference."
             """
             You must format the findings and impression output exactly like this:
@@ -68,35 +70,38 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
     else:
         prompt = (
             
-            f"Act as a professional {selected} and Refine the following medical report. \n\n"
+            f"Act as a professional {selected} and Refine the following medical report.\n\n"
             f"Raw report: {raw_findings}\n\n"
-            """give your output in strict markdown format."""
-            "also provide the output in following format,\n\n"
+            "give your output in strict markdown format."
             """
+            also provide the output in following format,\n\n
+        
             patient information,
             Investigation method,
             Technique,
             clinical profile,
             findings,
             impression
-            
-            If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
 
+            If you dont find clinical profile in the raw report, then just skip the section without mentioning it and try to determine other sections by yourself.
+            
             Enhance the given raw medical findings by integrating logical diagnostic reasoning. You must:
             1. **Embed clinically relevant analysis seamlessly** within the findings section — do not create a separate 'Analysis' section or use casual phrases like "this might mean".
             2. Use **professional medical terminology** to infer additional possibilities, correlations, or implications based on the findings.
             3. Highlight possible causes, differential diagnoses, or suggestive patterns that may aid in disease identification — even if not explicitly mentioned.
             4. Maintain a factual, evidence-based tone — reference imaging signs, lab patterns, anatomical context, or pathophysiology where possible.
             5. Provide an enhanced "Impression" section derived not only from the given findings but also from your integrated medical reasoning.
-            Also highlight the positive findings in the report with **bold**"""
+            Also highlight the positive findings in the report with **bold**
 
             When describing anatomical locations, avoid repeating the same phrase (e.g., "medial aspect") multiple times in close succession. Instead:
             - Use alternative descriptors where appropriate.
             - Combine related findings when they involve the same region.
             - Assume implicit context to avoid stating the same location repeatedly unless clinically essential.
+            Also highlight the positive findings in the report with **bold**
             
-            Also highlight the positive findings in the report with **bold**"""
-            """
+        
+            You must format the findings and impression output exactly like this:
+            
             - Heading
             \t- Subheading
             \t\t- Content
@@ -108,7 +113,7 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
 
             Rules:
             - Use EXACTLY one dash and one space ("- ") for bullets.
-            - Use one tab whitespace ("\s") for each indentation level.
+            - Use EXACTLY one tab ("\t") for each indentation level.
             - If subheadings exist, nest content below them.
             - If no subheading, put content directly after one tab.
             - Do not add blank lines between bullets or headings.
