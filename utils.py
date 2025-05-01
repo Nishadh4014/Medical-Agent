@@ -44,6 +44,13 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             - Combine related findings when they involve the same region.
             - Assume implicit context to avoid stating the same location repeatedly unless clinically essential.
             Also highlight the positive findings in the report with **bold**
+
+            Cross-check all sections for internal consistency. If any values, laterality (e.g., left vs. right), or statements are clearly incorrect, contradictory, or medically implausible, correct them based on logical inference from the full report. 
+            
+            - For numerical values (e.g., abnormal measurements or illogical anatomy), revise only if they are clearly erroneous or physiologically impossible.
+            - For inconsistent references (e.g., left in findings but right in impression), resolve based on context and maintain report integrity.
+            - Maintain original tone and structure — do not highlight the correction as an "edit" or explain it separately.
+            - Do NOT introduce casual language or guesswork — only fix what is clearly incorrect or contradictory.
             """
 
             f"Doctor has some preference for his report : {comments}, analize it and add an explicit section according to his preference."
@@ -99,7 +106,13 @@ def generate_refined_report(raw_findings,selected,comments, openai_client):
             - Assume implicit context to avoid stating the same location repeatedly unless clinically essential.
             Also highlight the positive findings in the report with **bold**
             
-        
+            Cross-check all sections for internal consistency. If any values, laterality (e.g., left vs. right), or statements are clearly incorrect, contradictory, or medically implausible, correct them based on logical inference from the full report. 
+
+            - For numerical values (e.g., abnormal measurements or illogical anatomy), revise only if they are clearly erroneous or physiologically impossible.
+            - For inconsistent references (e.g., left in findings but right in impression), resolve based on context and maintain report integrity.
+            - Maintain original tone and structure — do not highlight the correction as an "edit" or explain it separately.
+            - Do NOT introduce casual language or guesswork — only fix what is clearly incorrect or contradictory.
+            
             You must format the findings and impression output exactly like this:
             
             - Heading
